@@ -37,38 +37,40 @@ public class MapRenderer
 
     private char renderPosition(int row, int column)
     {
-        if (row == 0 && column == 0)
-        {
-            return '┌';
-        }
-        if (row == 0 && column < VIEWPORT_WIDTH - 1)
-        {
-            return '-';
-        }
         if (row == 0)
         {
+            if (column == 0)
+            {
+                return '┌';
+            }
+            if (column < VIEWPORT_WIDTH - 1)
+            {
+                return '-';
+            }
             return '┐';
         }
-        if (row < VIEWPORT_HEIGHT - 1 && column == 0)
+
+        if (row < VIEWPORT_HEIGHT - 1)
         {
-            return '│';
+            if (column == 0 || column == VIEWPORT_WIDTH - 1)
+            {
+                return '│';
+            }
         }
-        if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
-        {
-            return '│';
-        }
-        if (row == VIEWPORT_HEIGHT - 1 && column == 0)
-        {
-            return '└';
-        }
-        if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
-        {
-            return '-';
-        }
+
         if (row == VIEWPORT_HEIGHT - 1)
         {
+            if (column == 0)
+            {
+                return '└';
+            }
+            if (column < VIEWPORT_WIDTH - 1)
+            {
+                return '-';
+            }
             return '┘';
         }
+
         return ' ';
     }
 }
