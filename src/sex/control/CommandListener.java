@@ -10,7 +10,11 @@ public class CommandListener {
     }
 
     public void showHelp() {
-        System.out.println("Showing help");
+        System.out.println("'eq' - ekwipunek");
+        System.out.println("'exit' - wyjście");
+        System.out.println("'help' - pomoc");
+        System.out.println("'w/s/a/d' - ruch");
+
     }
 
     public void showEquipment() {
