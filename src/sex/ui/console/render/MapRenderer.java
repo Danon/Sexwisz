@@ -25,42 +25,7 @@ public class MapRenderer
         {
             for (int column = 0; column < VIEWPORT_WIDTH; column++)
             {
-                if (row == 0 && column == 0)
-                {
-                    map += "┌";
-                }
-                else if (row == 0 && column < VIEWPORT_WIDTH - 1)
-                {
-                    map += "-";
-                }
-                else if (row == 0)
-                {
-                    map += "┐";
-                }
-                else if (row < VIEWPORT_HEIGHT - 1 && column == 0)
-                {
-                    map += "│";
-                }
-                else if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
-                {
-                    map += "│";
-                }
-                else if (row == VIEWPORT_HEIGHT - 1 && column == 0)
-                {
-                    map += "└";
-                }
-                else if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
-                {
-                    map += "-";
-                }
-                else if (row == VIEWPORT_HEIGHT - 1)
-                {
-                    map += "┘";
-                }
-                else
-                {
-                    map += " ";
-                }
+                map += renderPosition(row, column);
             }
             map += "\n";
         }
@@ -68,5 +33,45 @@ public class MapRenderer
         map += String.format("Player position: (%d, %d)", player.getX(), player.getY());
 
         return map;
+    }
+
+    private char renderPosition(int row, int column)
+    {
+        if (row == 0 && column == 0)
+        {
+            return '┌';
+        }
+        else if (row == 0 && column < VIEWPORT_WIDTH - 1)
+        {
+            return '-';
+        }
+        else if (row == 0)
+        {
+            return '┐';
+        }
+        else if (row < VIEWPORT_HEIGHT - 1 && column == 0)
+        {
+            return '│';
+        }
+        else if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
+        {
+            return '│';
+        }
+        else if (row == VIEWPORT_HEIGHT - 1 && column == 0)
+        {
+            return '└';
+        }
+        else if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
+        {
+            return '-';
+        }
+        else if (row == VIEWPORT_HEIGHT - 1)
+        {
+            return '┘';
+        }
+        else
+        {
+            return ' ';
+        }
     }
 }
