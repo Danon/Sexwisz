@@ -23,18 +23,46 @@ public class MapRenderer
 
         for (int row = 0; row < VIEWPORT_HEIGHT; row++)
         {
-            if (row == 0)
+            for (int column = 0; column < VIEWPORT_WIDTH; column++)
             {
-                map += "┌-----------------------┐\n";
+                if (row == 0 && column == 0)
+                {
+                    map += "┌";
+                }
+                else if (row == 0 && column < VIEWPORT_WIDTH - 1)
+                {
+                    map += "-";
+                }
+                else if (row == 0)
+                {
+                    map += "┐";
+                }
+                else if (row < VIEWPORT_HEIGHT - 1 && column == 0)
+                {
+                    map += "│";
+                }
+                else if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
+                {
+                    map += "│";
+                }
+                else if (row == VIEWPORT_HEIGHT - 1 && column == 0)
+                {
+                    map += "└";
+                }
+                else if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
+                {
+                    map += "-";
+                }
+                else if (row == VIEWPORT_HEIGHT - 1)
+                {
+                    map += "┘";
+                }
+                else
+                {
+                    map += " ";
+                }
             }
-            else if (row != VIEWPORT_HEIGHT - 1)
-            {
-                map += "│                       │\n";
-            }
-            else
-            {
-                map += "└-----------------------┘\n";
-            }
+            map += "\n";
         }
 
         map += String.format("Player position: (%d, %d)", player.getX(), player.getY());
