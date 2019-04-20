@@ -41,37 +41,34 @@ public class MapRenderer
         {
             return '┌';
         }
-        else if (row == 0 && column < VIEWPORT_WIDTH - 1)
+        if (row == 0 && column < VIEWPORT_WIDTH - 1)
         {
             return '-';
         }
-        else if (row == 0)
+        if (row == 0)
         {
             return '┐';
         }
-        else if (row < VIEWPORT_HEIGHT - 1 && column == 0)
+        if (row < VIEWPORT_HEIGHT - 1 && column == 0)
         {
             return '│';
         }
-        else if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
+        if (row < VIEWPORT_HEIGHT - 1 && column == VIEWPORT_WIDTH - 1)
         {
             return '│';
         }
-        else if (row == VIEWPORT_HEIGHT - 1 && column == 0)
+        if (row == VIEWPORT_HEIGHT - 1 && column == 0)
         {
             return '└';
         }
-        else if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
+        if (row == VIEWPORT_HEIGHT - 1 && column < VIEWPORT_WIDTH - 1)
         {
             return '-';
         }
-        else if (row == VIEWPORT_HEIGHT - 1)
+        if (row == VIEWPORT_HEIGHT - 1)
         {
             return '┘';
         }
-        else
-        {
-            return ' ';
-        }
+        return ' ';
     }
 }
