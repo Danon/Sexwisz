@@ -13,7 +13,11 @@ public class LevelCalculator
 
     private int getLevelByExperience(int experience)
     {
+        if (experience == 0)
+        {
+            return 1;
+        }
         double level = Math.sqrt(experience) / 3.0;
-        return (int) Math.floor(level);
+        return (int) Math.ceil(level);
     }
 }
