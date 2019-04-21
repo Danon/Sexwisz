@@ -4,27 +4,28 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StageTest {
+class StageTest
+{
     @Test
-    void shouldPutCharacters() {
+    void shouldPutCharacters()
+    {
         // given
         Stage stage = new Stage(3, 3);
 
+        // when
         stage.put(0, 0, '1');
         stage.put(2, 0, '2');
         stage.put(0, 2, '3');
         stage.put(2, 2, '4');
         stage.put(1, 1, '5');
 
-        // when
-        stage.clear();
-
         // then
-        assertEquals("1 2\n" + " 5 \n" + "3 4\n", stage.render());
+        assertEquals("1 2\n 5 \n3 4\n", stage.render());
     }
 
     @Test
-    void shouldRenderEmpty() {
+    void shouldRenderEmpty()
+    {
         // given
         Stage stage = new Stage(4, 3);
 
@@ -36,7 +37,8 @@ class StageTest {
     }
 
     @Test
-    void shouldClear() {
+    void shouldClear()
+    {
         // given
         Stage stage = new Stage(3, 3);
 
@@ -47,7 +49,6 @@ class StageTest {
         stage.clear();
 
         // then
-        String expected = "   \n   \n   \n";
-        assertEquals(expected, stage.render());
+        assertEquals("   \n   \n   \n", stage.render());
     }
 }

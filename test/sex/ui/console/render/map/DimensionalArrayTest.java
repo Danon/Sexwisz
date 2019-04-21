@@ -4,24 +4,27 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DimensionalArrayTest {
+class DimensionalArrayTest
+{
     @Test
-    void shouldInitializeArray() {
+    void shouldInitializeArray()
+    {
         // given
 
         // when
-        char[][] result = DimensionalArray.twoDimensionalArray(3, 3);
+        char[][] result = DimensionalArray.twoDimensionalArray(3, 4);
 
         // then
         assertEquals(3, result.length);
 
-        assertEquals(3, result[0].length);
-        assertEquals(3, result[1].length);
-        assertEquals(3, result[2].length);
+        assertEquals(4, result[0].length);
+        assertEquals(4, result[1].length);
+        assertEquals(4, result[2].length);
     }
 
     @Test
-    void shouldInitializeEmptyArray() {
+    void shouldInitializeEmptyArray()
+    {
         // given
 
         // when
