@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 import static java.lang.Runtime.getRuntime;
 import static java.util.Arrays.asList;
+import static sex.control.Move.*;
 
 public class Game implements GameListener
 {
@@ -57,7 +58,26 @@ public class Game implements GameListener
     @Override
     public void movePlayer(Move move)
     {
-        System.out.println("Moving player: " + move);
+        int x = player.getX();
+        int y = player.getY();
+
+        if (move == UP)
+        {
+            y -= 1;
+        }
+        if (move == DOWN)
+        {
+            y += 1;
+        }
+        if (move == LEFT)
+        {
+            x -= 1;
+        }
+        if (move == RIGHT)
+        {
+            x += 1;
+        }
+        player.moveTo(x, y);
     }
 
     private void clearScreen()
