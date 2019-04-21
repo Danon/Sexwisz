@@ -5,7 +5,8 @@ import sex.game.effects.Effect;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class Player
+{
     private final LevelCalculator calculator;
     private final Equipment equipment;
     private final List<Effect> effects;
@@ -14,7 +15,8 @@ public class Player {
     private int experience = 0;
     private int hp;
 
-    public Player(LevelCalculator calculator, int x, int y, Equipment equipment) {
+    public Player(LevelCalculator calculator, int x, int y, Equipment equipment)
+    {
         this.calculator = calculator;
         this.equipment = equipment;
         this.x = x;
@@ -23,55 +25,68 @@ public class Player {
         this.effects = new ArrayList<>();
     }
 
-    public String getName() {
+    public String getName()
+    {
         return "Mateosz";
     }
 
-    public int getX() {
+    public int getX()
+    {
         return x;
     }
 
-    public int getY() {
+    public int getY()
+    {
         return y;
     }
 
-    public int experience() {
+    public int experience()
+    {
         return experience;
     }
 
-    public void gainExperience(int experience) {
+    public void gainExperience(int experience)
+    {
         this.experience += experience;
     }
 
-    public int level() {
+    public int level()
+    {
         return calculator.calculateLevel(experience);
     }
 
-    public int maxHealth() {
+    public int maxHealth()
+    {
         return 150;
     }
 
-    public void healOrDamage(int health) {
+    public void healOrDamage(int health)
+    {
         this.hp = Math.min(this.hp + health, maxHealth());
     }
 
-    public void overheal(int health) {
+    public void overheal(int health)
+    {
         this.hp += health;
     }
 
-    public Equipment equipment() {
+    public Equipment equipment()
+    {
         return equipment;
     }
 
-    public Stats baseStats() {
+    public Stats baseStats()
+    {
         return new Stats(level() / 2, level() / 3, level() / 4);
     }
 
-    public void addEffect(Effect effect) {
+    public void addEffect(Effect effect)
+    {
         this.effects.add(effect);
     }
 
-    public void tickDownEffects() {
+    public void tickDownEffects()
+    {
         this.effects.forEach(Effect::tickDown);
     }
 }

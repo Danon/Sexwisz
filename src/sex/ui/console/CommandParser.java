@@ -4,29 +4,36 @@ import sex.control.Move;
 import sex.control.CommandListener;
 import sex.control.EndGameListener;
 
-public class CommandParser {
+public class CommandParser
+{
     private final CommandListener commands;
     private final EndGameListener endGameListener;
 
-    public CommandParser(CommandListener commandListener, EndGameListener endGameListener) {
+    public CommandParser(CommandListener commandListener, EndGameListener endGameListener)
+    {
         this.commands = commandListener;
         this.endGameListener = endGameListener;
     }
 
-    public void parse(String command) {
+    public void parse(String command)
+    {
         parseIgnoringCase(command.toLowerCase());
     }
 
-    private void parseIgnoringCase(String command) {
-        if (command.equals("exit")) {
+    private void parseIgnoringCase(String command)
+    {
+        if (command.equals("exit"))
+        {
             endGameListener.finishGame();
             return;
         }
-        if (command.equals("help")) {
+        if (command.equals("help"))
+        {
             commands.showHelp();
             return;
         }
-        if (command.equals("equipment")) {
+        if (command.equals("equipment"))
+        {
             commands.showEquipment();
             return;
         }
@@ -34,24 +41,31 @@ public class CommandParser {
         parseManyMovesAtOnce(command);
     }
 
-    private void parseManyMovesAtOnce(String command) {
-        for (int i = 0; i < command.length(); i++) {
+    private void parseManyMovesAtOnce(String command)
+    {
+        for (int i = 0; i < command.length(); i++)
+        {
             char key = command.charAt(i);
             parseMove(key);
         }
     }
 
-    private void parseMove(char key) {
-        if (key == 'w') {
+    private void parseMove(char key)
+    {
+        if (key == 'w')
+        {
             commands.movePlayer(Move.UP);
         }
-        if (key == 's') {
+        if (key == 's')
+        {
             commands.movePlayer(Move.DOWN);
         }
-        if (key == 'a') {
+        if (key == 'a')
+        {
             commands.movePlayer(Move.RIGHT);
         }
-        if (key == 'a') {
+        if (key == 'a')
+        {
             commands.movePlayer(Move.LEFT);
         }
     }

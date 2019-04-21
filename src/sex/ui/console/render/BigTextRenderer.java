@@ -1,7 +1,9 @@
 package sex.ui.console.render;
 
-public class BigTextRenderer {
-    public String youDied() {
+public class BigTextRenderer
+{
+    public String youDied()
+    {
         return " __     __            _                            _ _          _          _ \n" +
                 " \\ \\   / /           | |                          | (_)        | |        | |\n" +
                 "  \\ \\_/ /__  _   _   | |__   __ ___   _____     __| |_  ___  __| | ___  __| |\n" +

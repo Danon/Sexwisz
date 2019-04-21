@@ -17,7 +17,8 @@ import java.util.Scanner;
 import static java.lang.Runtime.getRuntime;
 import static java.util.Arrays.asList;
 
-public class Game implements EndGameListener {
+public class Game implements EndGameListener
+{
     private final Scanner scanner;
     private final Player player;
     private final Board board;
@@ -26,7 +27,8 @@ public class Game implements EndGameListener {
 
     private boolean gamePlaying = true;
 
-    public Game(Scanner scanner) {
+    public Game(Scanner scanner)
+    {
         this.scanner = scanner;
         Equipment startingEquipment = new Equipment(15, asList(new Water(), new Bread(), new BagOfPotatoes()));
         this.player = new Player(new LevelCalculator(), 10, 10, startingEquipment);
@@ -35,8 +37,10 @@ public class Game implements EndGameListener {
         this.parser = new CommandParser(new CommandListener(new EquipmentRenderer(startingEquipment)), this);
     }
 
-    public void start() {
-        while (gamePlaying) {
+    public void start()
+    {
+        while (gamePlaying)
+        {
             clearScreen();
             System.out.println(mapRenderer.render());
             String command = scanner.nextLine();
@@ -45,14 +49,18 @@ public class Game implements EndGameListener {
     }
 
     @Override
-    public void finishGame() {
+    public void finishGame()
+    {
         this.gamePlaying = false;
     }
 
-    private void clearScreen() {
-        try {
+    private void clearScreen()
+    {
+        try
+        {
             getRuntime().exec("cls");
-        } catch (IOException ignored) {
+        } catch (IOException ignored)
+        {
         }
     }
 }

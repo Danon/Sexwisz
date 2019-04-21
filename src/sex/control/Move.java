@@ -1,5 +1,6 @@
 package sex.control;
 
-public enum Move {
+public enum Move
+{
     UP, DOWN, LEFT, RIGHT
 }

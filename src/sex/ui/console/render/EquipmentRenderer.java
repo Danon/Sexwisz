@@ -10,6 +10,8 @@ public class EquipmentRenderer {
     }
 
     public String render() {
+        // TODO Kaczor
+        // Przerób tak żeby faktycznie wyświetlało prawdziwy ekwipunek
         return "Your equipment is:\n" +
                 "  - Laska\n" +
                 "  - Chlyp\n";
