@@ -23,9 +23,4 @@ public class CommandListener
     {
         equipmentRenderer.render();
     }
-
-    public void movePlayer(Move move)
-    {
-        System.out.println("Moving player: " + move);
-    }
 }

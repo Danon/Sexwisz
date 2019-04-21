@@ -54,12 +54,19 @@ public class Game implements GameListener
         this.gamePlaying = false;
     }
 
+    @Override
+    public void movePlayer(Move move)
+    {
+        System.out.println("Moving player: " + move);
+    }
+
     private void clearScreen()
     {
         try
         {
             getRuntime().exec("cls");
-        } catch (IOException ignored)
+        }
+        catch (IOException ignored)
         {
         }
     }

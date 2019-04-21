@@ -6,12 +6,12 @@ import sex.control.GameListener;
 
 public class CommandParser
 {
-    private final CommandListener commands;
+    private final CommandListener commandListener;
     private final GameListener gameListener;
 
     public CommandParser(CommandListener commandListener, GameListener gameListener)
     {
-        this.commands = commandListener;
+        this.commandListener = commandListener;
         this.gameListener = gameListener;
     }
 
@@ -29,12 +29,12 @@ public class CommandParser
         }
         if (command.equals("help"))
         {
-            commands.showHelp();
+            commandListener.showHelp();
             return;
         }
         if (command.equals("equipment"))
         {
-            commands.showEquipment();
+            commandListener.showEquipment();
             return;
         }
 
@@ -54,19 +54,19 @@ public class CommandParser
     {
         if (key == 'w')
         {
-            commands.movePlayer(Move.UP);
+            gameListener.movePlayer(Move.UP);
         }
         if (key == 's')
         {
-            commands.movePlayer(Move.DOWN);
+            gameListener.movePlayer(Move.DOWN);
         }
         if (key == 'a')
         {
-            commands.movePlayer(Move.RIGHT);
+            gameListener.movePlayer(Move.RIGHT);
         }
         if (key == 'a')
         {
-            commands.movePlayer(Move.LEFT);
+            gameListener.movePlayer(Move.LEFT);
         }
     }
 }
