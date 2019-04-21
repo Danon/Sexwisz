@@ -5,20 +5,12 @@ import sex.game.items.Item;
 import java.util.List;
 
 public class Equipment {
-    private final List<Item> items;
     private int gold;
+    private final List<Item> items;
 
-    public Equipment(List<Item> items, int gold) {
+    public Equipment(int gold, List<Item> items) {
         this.items = items;
         this.gold = gold;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void drop(Item item) {
-        items.remove(item);
     }
 
     public int gold() {
@@ -31,5 +23,9 @@ public class Equipment {
 
     public void earn(int income) {
         this.gold += income;
+    }
+
+    public List<Item> items() {
+        return items;
     }
 }

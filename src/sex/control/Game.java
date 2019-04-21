@@ -4,7 +4,6 @@ import sex.game.Board;
 import sex.game.Equipment;
 import sex.game.LevelCalculator;
 import sex.game.Player;
-import sex.game.items.Item;
 import sex.game.items.consumables.food.BagOfPotatoes;
 import sex.game.items.consumables.food.Bread;
 import sex.game.items.consumables.food.Water;
@@ -13,7 +12,6 @@ import sex.ui.console.render.EquipmentRenderer;
 import sex.ui.console.render.MapRenderer;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Runtime.getRuntime;
@@ -30,11 +28,11 @@ public class Game implements EndGameListener {
 
     public Game(Scanner scanner) {
         this.scanner = scanner;
-        Equipment startingPlayerEquipment = startingPlayerEquipment();
-        this.player = new Player(new LevelCalculator(), 10, 10, startingPlayerEquipment);
+        Equipment startingEquipment = new Equipment(15, asList(new Water(), new Bread(), new BagOfPotatoes()));
+        this.player = new Player(new LevelCalculator(), 10, 10, startingEquipment);
         this.board = new Board();
         this.mapRenderer = new MapRenderer(board, player);
-        this.parser = new CommandParser(new CommandListener(new EquipmentRenderer(startingPlayerEquipment)), this);
+        this.parser = new CommandParser(new CommandListener(new EquipmentRenderer(startingEquipment)), this);
     }
 
     public void start() {
@@ -56,15 +54,5 @@ public class Game implements EndGameListener {
             getRuntime().exec("cls");
         } catch (IOException ignored) {
         }
-    }
-
-    private Equipment startingPlayerEquipment() {
-        List<Item> startingItems = asList(
-                new Water(),
-                new Bread(),
-                new BagOfPotatoes()
-        );
-
-        return new Equipment(startingItems, 15);
     }
 }
