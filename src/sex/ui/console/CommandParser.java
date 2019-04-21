@@ -2,17 +2,17 @@ package sex.ui.console;
 
 import sex.control.Move;
 import sex.control.CommandListener;
-import sex.control.EndGameListener;
+import sex.control.GameListener;
 
 public class CommandParser
 {
     private final CommandListener commands;
-    private final EndGameListener endGameListener;
+    private final GameListener gameListener;
 
-    public CommandParser(CommandListener commandListener, EndGameListener endGameListener)
+    public CommandParser(CommandListener commandListener, GameListener gameListener)
     {
         this.commands = commandListener;
-        this.endGameListener = endGameListener;
+        this.gameListener = gameListener;
     }
 
     public void parse(String command)
@@ -24,7 +24,7 @@ public class CommandParser
     {
         if (command.equals("exit"))
         {
-            endGameListener.finishGame();
+            gameListener.finishGame();
             return;
         }
         if (command.equals("help"))

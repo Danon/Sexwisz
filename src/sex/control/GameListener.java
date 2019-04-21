@@ -1,6 +1,6 @@
 package sex.control;
 
-public interface EndGameListener
+public interface GameListener
 {
     void finishGame();
 }

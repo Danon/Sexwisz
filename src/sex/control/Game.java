@@ -17,7 +17,7 @@ import java.util.Scanner;
 import static java.lang.Runtime.getRuntime;
 import static java.util.Arrays.asList;
 
-public class Game implements EndGameListener
+public class Game implements GameListener
 {
     private final Scanner scanner;
     private final Player player;
