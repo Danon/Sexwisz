@@ -60,7 +60,7 @@ public class CommandParser
         {
             gameListener.movePlayer(Move.DOWN);
         }
-        if (key == 'a')
+        if (key == 'd')
         {
             gameListener.movePlayer(Move.RIGHT);
         }
