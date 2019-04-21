@@ -24,4 +24,12 @@ public class Equipment {
     public int gold() {
         return gold;
     }
+
+    public void pay(int price) {
+        this.gold -= price;
+    }
+
+    public void earn(int income) {
+        this.gold += income;
+    }
 }

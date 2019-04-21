@@ -15,6 +15,6 @@ public abstract class EffectiveConsumable extends Consumable {
 
     @Override
     public void eat(Player player) {
-        getEffects().forEach(player::getEffect);
+        getEffects().forEach(player::addEffect);
     }
 }

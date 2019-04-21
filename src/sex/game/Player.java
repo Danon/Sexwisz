@@ -39,12 +39,12 @@ public class Player {
         return experience;
     }
 
-    public int level() {
-        return calculator.calculateLevel(experience);
-    }
-
     public void gainExperience(int experience) {
         this.experience += experience;
+    }
+
+    public int level() {
+        return calculator.calculateLevel(experience);
     }
 
     public int maxHealth() {
@@ -59,7 +59,7 @@ public class Player {
         this.hp += health;
     }
 
-    public Equipment getEquipment() {
+    public Equipment equipment() {
         return equipment;
     }
 
@@ -67,7 +67,7 @@ public class Player {
         return new Stats(level() / 2, level() / 3, level() / 4);
     }
 
-    public void getEffect(Effect effect) {
+    public void addEffect(Effect effect) {
         this.effects.add(effect);
     }
 

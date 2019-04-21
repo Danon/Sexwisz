@@ -5,13 +5,13 @@ import sex.game.Stats;
 
 public abstract class Effect {
     private final String name;
-    private final int maxDuration;
+    private final int duration;
     private int remainingTime;
 
-    Effect(String name, int maxDuration) {
+    Effect(String name, int duration) {
         this.name = name;
-        this.maxDuration = maxDuration;
-        this.remainingTime = maxDuration;
+        this.duration = duration;
+        this.remainingTime = duration;
     }
 
     public String getName() {
@@ -19,7 +19,7 @@ public abstract class Effect {
     }
 
     public int getMaxDuration() {
-        return maxDuration;
+        return duration;
     }
 
     public int getRemainingTime() {
