@@ -1,8 +1,8 @@
-package sex.game.items.consumables.effective;
+package sex.game.items.consumables;
 
 import sex.game.Stats;
-import sex.game.items.consumables.effective.effects.Effect;
-import sex.game.items.consumables.effective.effects.StatsEffect;
+import sex.game.effects.Effect;
+import sex.game.effects.StatsEffect;
 
 import java.util.List;
 

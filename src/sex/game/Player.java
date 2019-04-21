@@ -1,6 +1,6 @@
 package sex.game;
 
-import sex.game.items.consumables.effective.effects.Effect;
+import sex.game.effects.Effect;
 
 import java.util.ArrayList;
 import java.util.List;

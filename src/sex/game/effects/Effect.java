@@ -1,4 +1,4 @@
-package sex.game.items.consumables.effective.effects;
+package sex.game.effects;
 
 import sex.game.Player;
 import sex.game.Stats;
