@@ -1,4 +1,4 @@
-package sex.game.items.consumables.basic;
+package sex.game.items.consumables.food;
 
 import sex.game.Player;
 import sex.game.items.consumables.Consumable;

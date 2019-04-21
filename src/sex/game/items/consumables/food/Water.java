@@ -1,4 +1,4 @@
-package sex.game.items.consumables.basic;
+package sex.game.items.consumables.food;
 
 public class Water extends Food {
     public Water() {
