@@ -25,17 +25,18 @@ public class MapRenderer
         {
             for (int column = 0; column < VIEWPORT_WIDTH; column++)
             {
-                map += renderPosition(row, column);
+                map += renderBorders(row, column);
             }
             map += "\n";
         }
+
 
         map += String.format("Player position: (%d, %d)", player.getX(), player.getY());
 
         return map;
     }
 
-    private char renderPosition(int row, int column)
+    private char renderBorders(int row, int column)
     {
         if (row == 0)
         {
@@ -69,6 +70,11 @@ public class MapRenderer
                 return '-';
             }
             return '┘';
+        }
+
+        if (row == player.getY() && column == player.getX())
+        {
+            return '@';
         }
 
         return ' ';
