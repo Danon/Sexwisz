@@ -9,6 +9,7 @@ import sex.game.items.consumables.food.Water;
 
 import java.util.List;
 
+import static java.util.Collections.emptyList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ItemsRendererTest
@@ -104,7 +105,7 @@ class ItemsRendererTest
                 new Water(),
                 new Weapon("Topór", 2, 8, 0, 0)
         );
-        Equipment equipment = new Equipment(15, items);
+        Equipment equipment = new Equipment(0, items);
 
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
@@ -118,5 +119,20 @@ class ItemsRendererTest
                 " - Woda (+5 hp)\n" +
                 " - Broń: Topór (2-8 physical)\n";
         assertEquals(expected, result);
+    }
+
+    @Test
+    void shouldRenderGold()
+    {
+        // given
+        Equipment equipment = new Equipment(15, emptyList());
+
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
+
+        // when
+        String result = renderer.renderGold();
+
+        // then
+        assertEquals("Złoto: 15", result);
     }
 }
