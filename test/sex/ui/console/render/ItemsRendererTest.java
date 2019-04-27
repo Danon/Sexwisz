@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class EquipmentRendererTest
+class ItemsRendererTest
 {
     @Test
     void shouldRenderWater()
@@ -20,7 +20,7 @@ class EquipmentRendererTest
         List<Item> items = List.of(new Water());
         Equipment equipment = new Equipment(0, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();
@@ -36,7 +36,7 @@ class EquipmentRendererTest
         List<Item> items = List.of(new Bread());
         Equipment equipment = new Equipment(0, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();
@@ -52,7 +52,7 @@ class EquipmentRendererTest
         List<Item> items = List.of(new Weapon("Miecz", 4, 5, 0, 0));
         Equipment equipment = new Equipment(0, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();
@@ -68,7 +68,7 @@ class EquipmentRendererTest
         List<Item> items = List.of(new Weapon("Różdżka", 0, 0, 4, 5));
         Equipment equipment = new Equipment(0, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();
@@ -84,7 +84,7 @@ class EquipmentRendererTest
         List<Item> items = List.of(new Weapon("Zatruty sztylet", 2, 4, 0, 2));
         Equipment equipment = new Equipment(0, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();
@@ -106,7 +106,7 @@ class EquipmentRendererTest
         );
         Equipment equipment = new Equipment(15, items);
 
-        EquipmentRenderer renderer = new EquipmentRenderer(equipment);
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
         String result = renderer.render();

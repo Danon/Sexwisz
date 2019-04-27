@@ -2,18 +2,21 @@ package sex.ui.console.render;
 
 import sex.game.Equipment;
 
-public class EquipmentRenderer {
+public class ItemsRenderer
+{
     private final Equipment equipment;
 
-    public EquipmentRenderer(Equipment equipment) {
+    public ItemsRenderer(Equipment equipment)
+    {
         this.equipment = equipment;
     }
 
-    public String render() {
+    public String render()
+    {
         // TODO Kaczor
         // Przerób tak żeby faktycznie wyświetlało prawdziwy ekwipunek
-        return "Your equipment is:\n" +
-                "  - Laska\n" +
-                "  - Chlyp\n";
+        // Już jest napisany pod to test
+        return " - Laska\n" +
+                " - Chlyp\n";
     }
 }

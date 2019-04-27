@@ -8,7 +8,7 @@ import sex.game.items.consumables.food.BagOfPotatoes;
 import sex.game.items.consumables.food.Bread;
 import sex.game.items.consumables.food.Water;
 import sex.ui.console.CommandParser;
-import sex.ui.console.render.EquipmentRenderer;
+import sex.ui.console.render.ItemsRenderer;
 import sex.ui.console.render.MapRenderer;
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Game implements GameListener
         this.player = new Player(new LevelCalculator(), 10, 10, startingEquipment);
         this.board = new Board();
         this.mapRenderer = new MapRenderer(board, player);
-        this.parser = new CommandParser(new CommandListener(new EquipmentRenderer(startingEquipment)), this);
+        this.parser = new CommandParser(new CommandListener(new ItemsRenderer(startingEquipment)), this);
     }
 
     public void start()

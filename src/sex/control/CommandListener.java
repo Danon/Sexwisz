@@ -1,14 +1,14 @@
 package sex.control;
 
-import sex.ui.console.render.EquipmentRenderer;
+import sex.ui.console.render.ItemsRenderer;
 
 public class CommandListener
 {
-    private final EquipmentRenderer equipmentRenderer;
+    private final ItemsRenderer itemsRenderer;
 
-    CommandListener(EquipmentRenderer equipmentRenderer)
+    CommandListener(ItemsRenderer itemsRenderer)
     {
-        this.equipmentRenderer = equipmentRenderer;
+        this.itemsRenderer = itemsRenderer;
     }
 
     public void showHelp()
@@ -21,6 +21,6 @@ public class CommandListener
 
     public void showEquipment()
     {
-        equipmentRenderer.render();
+        itemsRenderer.render();
     }
 }
