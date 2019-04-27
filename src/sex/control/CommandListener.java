@@ -21,6 +21,8 @@ public class CommandListener
 
     public void showEquipment()
     {
-        itemsRenderer.render();
+        // TODO przerób tak żeby faktycznie wyświetlało ekwipunek (podpowiedź: System.out.println())
+        itemsRenderer.renderGold();
+        itemsRenderer.renderItems();
     }
 }

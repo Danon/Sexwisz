@@ -23,7 +23,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         assertEquals(" - Woda (+5 hp)\n", result);
@@ -39,7 +39,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         assertEquals(" - Chleb (+45 hp)\n", result);
@@ -55,7 +55,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         assertEquals(" - Broń: Miecz (4-5 fizycznych)\n", result);
@@ -71,7 +71,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         assertEquals(" - Broń: Różdżka (4-5 magicznych)\n", result);
@@ -87,7 +87,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         assertEquals(" - Broń: Zatruty sztylet (2-4 fizycznych, 0-2 magicznych)\n", result);
@@ -109,7 +109,7 @@ class ItemsRendererTest
         ItemsRenderer renderer = new ItemsRenderer(equipment);
 
         // when
-        String result = renderer.render();
+        String result = renderer.renderItems();
 
         // then
         String expected = " - Woda (+5 hp)\n" +

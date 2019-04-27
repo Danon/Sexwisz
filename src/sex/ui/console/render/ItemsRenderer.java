@@ -11,7 +11,15 @@ public class ItemsRenderer
         this.equipment = equipment;
     }
 
-    public String render()
+    public String renderGold()
+    {
+        // TODO Kaczor
+        // Przerób tak żeby faktycznie wyświetlało prawidziwą ilość złota
+        // Już jest napisany pod to test
+        return "Złoto: 9";
+    }
+
+    public String renderItems()
     {
         // TODO Kaczor
         // Przerób tak żeby faktycznie wyświetlało prawdziwy ekwipunek
