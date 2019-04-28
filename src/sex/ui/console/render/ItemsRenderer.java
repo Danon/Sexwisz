@@ -13,10 +13,8 @@ public class ItemsRenderer
 
     public String renderGold()
     {
-        // TODO Kaczor
-        // Przerób tak żeby faktycznie wyświetlało prawidziwą ilość złota
-        // Już jest napisany pod to test
-        return "Złoto: 9";
+        int goldCount = equipment.gold();
+        return "Złoto: " + goldCount;
     }
 
     public String renderItems()
