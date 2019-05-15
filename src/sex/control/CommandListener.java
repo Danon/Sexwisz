@@ -11,18 +11,19 @@ public class CommandListener
         this.itemsRenderer = itemsRenderer;
     }
 
-    public void showHelp()
+    public String showHelp()
     {
-        System.out.println("'help'    - Pokaż pomoc");
-        System.out.println("'eq'      - Wyświetl ekwipunek");
-        System.out.println("'w/s/a/d' - Ruch gracza (można wpisać na raz np. 'wwwww' - 5 razy w górę");
-        System.out.println("'exit'    - Wyjście");
+        return "'help'    - Pokaż pomoc\n" +
+                "'eq'      - Wyświetl ekwipunek\n" +
+                "'w/s/a/d' - Ruch gracza (można wpisać na raz np. 'wwwww' - 5 razy w górę\n" +
+                "'exit'    - Wyjście\n";
     }
 
-    public void showEquipment()
+    public String showEquipment()
     {
-        // TODO przerób tak żeby faktycznie wyświetlało ekwipunek (podpowiedź: System.out.println())
+        // TODO przerób tak żeby faktycznie wyświetlało ekwipunek
         itemsRenderer.renderGold();
         itemsRenderer.renderItems();
+        return "";
     }
 }
