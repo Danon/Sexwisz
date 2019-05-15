@@ -51,17 +51,17 @@ public class ItemsRenderer
     {
         if (weapon.attackPhysicalMax() == 0 && weapon.attackMagicalMax() == 0)
         {
-            return " - Broń: " + weapon.getName() + " (useless)\n";
+            return " - " + weapon.getName() + " (useless)\n";
         }
         if (weapon.attackPhysicalMax() == 0)
         {
-            return " - Broń: " + weapon.getName() + " (" + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+            return " - " + weapon.getName() + " (" + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
         }
         if (weapon.attackMagicalMax() == 0)
         {
-            return " - Broń: " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych)\n";
+            return " - " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych)\n";
         }
-        return " - Broń: " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych, " + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+        return " - " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych, " + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
     }
 
     private String renderFood(Food item)
