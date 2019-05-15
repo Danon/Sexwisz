@@ -151,4 +151,17 @@ class ItemsRendererTest
         // then
         assertEquals("Złoto: 15", result);
     }
+
+    @Test
+    void shouldRenderEmptyItems()
+    {
+        // given
+        ItemsRenderer renderer = new ItemsRenderer(new Equipment(15, emptyList()));
+
+        // when
+        String result = renderer.renderItems();
+
+        // then
+        assertEquals("You don't have any items :/", result);
+    }
 }
