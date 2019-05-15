@@ -9,10 +9,12 @@ import sex.ui.console.render.ItemsRenderer;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class CommandListenerTest
 {
     @Test
-    void shouldShowHelp()
+    void shouldShowEquipment()
     {
         // given
         CommandListener listener = new CommandListener(new ItemsRenderer(new Equipment(15, List.of(
@@ -26,10 +28,8 @@ class CommandListenerTest
         // then
         String expected = "Złoto: 15\n" +
                 "Twoje przedmioty:\n" +
-                " - Chleb\n" +
-                " - Chleb\n" +
-                " - Chleb\n" +
-                " - Chleb\n";
-        Assertions.assertEquals(expected, equipment);
+                " - Chleb (+45 hp)\n" +
+                " - Miecz (4-5 fizycznych)\n";
+        assertEquals(expected, equipment);
     }
 }
