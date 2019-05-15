@@ -14,18 +14,24 @@ public class Weapon extends Item
         this.magicalMax = magicalMax;
     }
 
-    public int attackPhysical()
+    public int attackPhysicalMin()
     {
-        return attack(physicalMin, physicalMax);
+        return physicalMin;
     }
 
-    public int attackMagical()
+    public int attackPhysicalMax()
     {
-        return attack(magicalMin, magicalMax);
+        return physicalMax;
     }
 
-    private int attack(int min, int max)
+    public int attackMagicalMin()
     {
-        return min + 2;
+        return magicalMin;
     }
-}
+
+    public int attackMagicalMax()
+    {
+        return magicalMax;
+    }
+
+ }

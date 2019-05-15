@@ -1,6 +1,10 @@
 package sex.ui.console.render;
 
 import sex.game.Equipment;
+import sex.game.items.Item;
+import sex.game.items.Weapon;
+
+import java.util.List;
 
 public class ItemsRenderer
 {
@@ -19,23 +23,21 @@ public class ItemsRenderer
 
     public String renderItems()
     {
-        /*
-        List<Item> itemsList = equipment.items();                    // Wystarczy nazwa "items". to że to jest lista każdy widzi, bo List<Item>
-        String water = "";
-        if(itemsList<Water>)                                         // Ten 'if' miał sprawdzić pierwszy element listy? Wszystkie? Co to miało robić?
+        List<Item> items = equipment.items();
+        Item item = items.get(0);
+        if (item instanceof Weapon)
         {
-            Water waterCount = new Water();                          // Nie twórz nowych itemów tutaj. Ta funkcja ma wyświetlić te które są w uquipment.items(), a nie jakieś nowe
-            return water += waterCount;
-        } */                                                         // Nigdy, ale to nigdy nie wrzucaj do głównego brancha 'master' kodu który się nie kompiluje!
-
-
-        // Powinno to wyglądać mniej więcej tak:
-        // Pytania:
-        // 1. Ile chcemy wyświetlić itemów? Żadnego? Jeden? Wszystkie? Niektóre?
-        // - jak żadnego, to kod zostaje pusty
-        // - jak jeden, to return itemsList.get(0)
-        // - jak wszystkie to pętla for, a w niej itemsList.get(i)
-        // - jak niektóre to pętla for, w niej if (itemsList.get(i)) //
-
+            Weapon weapon = (Weapon) item;
+            if (weapon.attackPhysicalMax() == 0)
+            {
+                return " - Broń: " + item.getName() + " (" + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+            }
+            if (weapon.attackMagicalMax() == 0)
+            {
+                return " - Broń: " + item.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych)\n";
+            }
+            return " - Broń: " + item.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych, " + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+        }
+        return "niebroń :(";
     }
 }
