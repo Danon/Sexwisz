@@ -29,12 +29,12 @@ public class CommandParser
         }
         if (command.equals("help"))
         {
-            commandListener.showHelp();
+            System.out.println(commandListener.showHelp());
             return;
         }
         if (command.equals("equipment"))
         {
-            commandListener.showEquipment();
+            System.out.println(commandListener.showEquipment());
             return;
         }
 
