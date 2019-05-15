@@ -49,19 +49,27 @@ public class ItemsRenderer
 
     private String renderWeapon(Weapon weapon)
     {
+        return " - " + weapon.getName() + " (" + renderWeaponStats(weapon) + ")\n";
+    }
+
+    private String renderWeaponStats(Weapon weapon)
+    {
         if (weapon.attackPhysicalMax() == 0 && weapon.attackMagicalMax() == 0)
         {
-            return " - " + weapon.getName() + " (useless)\n";
+            return "useless";
         }
         if (weapon.attackPhysicalMax() == 0)
         {
-            return " - " + weapon.getName() + " (" + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+            return weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych";
         }
         if (weapon.attackMagicalMax() == 0)
         {
-            return " - " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych)\n";
+            return weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych";
         }
-        return " - " + weapon.getName() + " (" + weapon.attackPhysicalMin() + "-" + weapon.attackPhysicalMax() + " fizycznych, " + weapon.attackMagicalMin() + "-" + weapon.attackMagicalMax() + " magicznych)\n";
+        return weapon.attackPhysicalMin() + "-" +
+                weapon.attackPhysicalMax() + " fizycznych, "
+                + weapon.attackMagicalMin() + "-"
+                + weapon.attackMagicalMax() + " magicznych";
     }
 
     private String renderFood(Food item)
