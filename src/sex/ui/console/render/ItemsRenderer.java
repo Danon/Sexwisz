@@ -25,16 +25,20 @@ public class ItemsRenderer
     public String renderItems()
     {
         List<Item> items = equipment.items();
-        Item item = items.get(0);
-        if (item instanceof Weapon)
+        String equipmentItems = "";
+        for(int x = 0; x < items.size(); x++)
         {
-            return renderWeapon((Weapon) item);
+            Item item = items.get(x);
+            if (item instanceof Weapon)
+            {
+                equipmentItems += renderWeapon((Weapon) item);
+            }
+            if (item instanceof Food)
+            {
+                equipmentItems += renderFood((Food) item);
+            }
         }
-        if (item instanceof Food)
-        {
-            return renderFood((Food) item);
-        }
-        return "niebroń :(";
+        return equipmentItems;
     }
 
     private String renderWeapon(Weapon weapon)

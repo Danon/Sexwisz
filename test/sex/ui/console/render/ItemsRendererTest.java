@@ -131,9 +131,9 @@ class ItemsRendererTest
         // then
         String expected = " - Woda (+5 hp)\n" +
                 " - Chleb (+45 hp)\n" +
-                " - Broń: Miecz (4-5 physical)\n" +
+                " - Broń: Miecz (4-5 fizycznych)\n" +
                 " - Woda (+5 hp)\n" +
-                " - Broń: Topór (2-8 physical)\n";
+                " - Broń: Topór (2-8 fizycznych)\n";
         assertEquals(expected, result);
     }
 
