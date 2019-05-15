@@ -25,8 +25,14 @@ public class ItemsRenderer
     public String renderItems()
     {
         List<Item> items = equipment.items();
+
+        if (items.size() == 0)
+        {
+            return "Nie masz żadnych przedmiotów w ekwipunku NOOBIE";
+        }
+
         String equipmentItems = "";
-        for(int x = 0; x < items.size(); x++)
+        for (int x = 0; x < items.size(); x++)
         {
             Item item = items.get(x);
             if (item instanceof Weapon)
