@@ -63,6 +63,22 @@ class ItemsRendererTest
     }
 
     @Test
+    void shouldRenderUselessWeapon()
+    {
+        // given
+        List<Item> items = List.of(new Weapon("Penis Pawłyszcze", 0, 0, 0, 0));
+        Equipment equipment = new Equipment(0, items);
+
+        ItemsRenderer renderer = new ItemsRenderer(equipment);
+
+        // when
+        String result = renderer.renderItems();
+
+        // then
+        assertEquals(" - Broń: Penis Pawłyszcze (useless)\n", result);
+    }
+
+    @Test
     void shouldRenderMagicalWeapon()
     {
         // given
