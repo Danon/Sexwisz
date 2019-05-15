@@ -18,4 +18,9 @@ public abstract class Food extends Consumable
     {
         player.healOrDamage(healing);
     }
+
+    public int healing()
+    {
+        return healing;
+    }
 }
