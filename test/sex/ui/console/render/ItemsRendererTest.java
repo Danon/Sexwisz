@@ -162,6 +162,6 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals("You don't have any items :/", result);
+        assertEquals("Nie masz żadnych przedmiotów w ekwipunku NOOBIE", result);
     }
 }
