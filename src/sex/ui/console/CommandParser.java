@@ -32,7 +32,7 @@ public class CommandParser
             System.out.println(commandListener.showHelp());
             return;
         }
-        if (command.equals("equipment"))
+        if (command.equals("eq"))
         {
             System.out.println(commandListener.showEquipment());
             return;
