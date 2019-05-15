@@ -59,7 +59,7 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals(" - Broń: Miecz (4-5 fizycznych)\n", result);
+        assertEquals(" - Miecz (4-5 fizycznych)\n", result);
     }
 
     @Test
@@ -75,7 +75,7 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals(" - Broń: Penis Pawłyszcze (useless)\n", result);
+        assertEquals(" - Penis Pawłyszcze (useless)\n", result);
     }
 
     @Test
@@ -91,7 +91,7 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals(" - Broń: Różdżka (4-5 magicznych)\n", result);
+        assertEquals(" - Różdżka (4-5 magicznych)\n", result);
     }
 
     @Test
@@ -107,7 +107,7 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals(" - Broń: Zatruty sztylet (2-4 fizycznych, 0-2 magicznych)\n", result);
+        assertEquals(" - Zatruty sztylet (2-4 fizycznych, 0-2 magicznych)\n", result);
     }
 
     @Test
@@ -131,9 +131,9 @@ class ItemsRendererTest
         // then
         String expected = " - Woda (+5 hp)\n" +
                 " - Chleb (+45 hp)\n" +
-                " - Broń: Miecz (4-5 fizycznych)\n" +
+                " - Miecz (4-5 fizycznych)\n" +
                 " - Woda (+5 hp)\n" +
-                " - Broń: Topór (2-8 fizycznych)\n";
+                " - Topór (2-8 fizycznych)\n";
         assertEquals(expected, result);
     }
 
