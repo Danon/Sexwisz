@@ -4,6 +4,6 @@ public class Bread extends Food
 {
     public Bread()
     {
-        super("Chleb", 45);
+        super("Chleb", 35);
     }
 }
