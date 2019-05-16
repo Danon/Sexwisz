@@ -43,7 +43,7 @@ class ItemsRendererTest
         String result = renderer.renderItems();
 
         // then
-        assertEquals(" - Chleb (+45 hp)\n", result);
+        assertEquals(" - Chleb (+35 hp)\n", result);
     }
 
     @Test
@@ -130,7 +130,7 @@ class ItemsRendererTest
 
         // then
         String expected = " - Woda (+5 hp)\n" +
-                " - Chleb (+45 hp)\n" +
+                " - Chleb (+35 hp)\n" +
                 " - Miecz (4-5 fizycznych)\n" +
                 " - Woda (+5 hp)\n" +
                 " - Topór (2-8 fizycznych)\n";

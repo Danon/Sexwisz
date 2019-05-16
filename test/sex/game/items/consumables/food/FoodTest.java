@@ -14,7 +14,7 @@ class FoodTest
         // when
         int healing = food.healing();
         // then
-        assertEquals(45, healing);
+        assertEquals(35, healing);
     }
 
     @Test

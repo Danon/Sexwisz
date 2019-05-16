@@ -31,7 +31,7 @@ public class MapRenderer
         }
 
 
-        map += String.format("Player position: (%d, %d)", player.getX(), player.getY());
+        map += String.format("Pozycja gracza: (%d, %d)", player.getX(), player.getY());
 
         return map;
     }

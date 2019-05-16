@@ -28,7 +28,7 @@ class CommandListenerTest
         // then
         String expected = "Złoto: 15\n" +
                 "Twoje przedmioty:\n" +
-                " - Chleb (+45 hp)\n" +
+                " - Chleb (+35 hp)\n" +
                 " - Miecz (4-5 fizycznych)\n";
         assertEquals(expected, equipment);
     }
