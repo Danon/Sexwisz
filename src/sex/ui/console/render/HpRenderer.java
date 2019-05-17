@@ -4,6 +4,6 @@ public class HpRenderer
 {
     public String render(int actual, int max)
     {
-
+        return "";
     }
 }
