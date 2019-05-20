@@ -1,8 +1,8 @@
 package sex.ui.console;
 
-import sex.control.Move;
 import sex.control.CommandListener;
 import sex.control.GameListener;
+import sex.control.Move;
 
 public class CommandParser
 {
@@ -25,20 +25,19 @@ public class CommandParser
         if (command.equals("exit"))
         {
             gameListener.finishGame();
-            return;
         }
-        if (command.equals("help"))
+        else if (command.equals("help"))
         {
             System.out.println(commandListener.showHelp());
-            return;
         }
-        if (command.equals("eq"))
+        else if (command.equals("eq"))
         {
             System.out.println(commandListener.showEquipment());
-            return;
         }
-
-        parseManyMovesAtOnce(command);
+        else
+        {
+            parseManyMovesAtOnce(command);
+        }
     }
 
     private void parseManyMovesAtOnce(String command)
