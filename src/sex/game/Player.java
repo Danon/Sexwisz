@@ -24,6 +24,10 @@ public class Player
         this.hp = maxHealth();
         this.effects = new ArrayList<>();
     }
+    public int health()
+    {
+        return hp;
+    }
 
     public String getName()
     {

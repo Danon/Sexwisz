@@ -10,6 +10,7 @@ import sex.game.items.consumables.food.Water;
 import sex.ui.console.CommandParser;
 import sex.ui.console.render.ItemsRenderer;
 import sex.ui.console.render.MapRenderer;
+import sex.ui.console.render.ProportionalHpRenderer;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,6 +25,7 @@ public class Game implements GameListener
     private final Player player;
     private final Board board;
     private final MapRenderer mapRenderer;
+    private final ProportionalHpRenderer proportionalHpRenderer;
     private final CommandParser parser;
 
     private boolean gamePlaying = true;
@@ -35,6 +37,7 @@ public class Game implements GameListener
         this.player = new Player(new LevelCalculator(), 10, 10, startingEquipment);
         this.board = new Board();
         this.mapRenderer = new MapRenderer(board, player);
+        this.proportionalHpRenderer = new ProportionalHpRenderer(16);
         this.parser = new CommandParser(new CommandListener(new ItemsRenderer(startingEquipment)), this);
     }
 
@@ -44,6 +47,7 @@ public class Game implements GameListener
         {
             clearScreen();
             System.out.println(mapRenderer.render());
+            System.out.println("Zdrowie: " + proportionalHpRenderer.render(player.health(), player.maxHealth()));
             String command = scanner.nextLine();
             parser.parse(command);
         }

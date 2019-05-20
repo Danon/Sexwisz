@@ -5,7 +5,7 @@ public class ProportionalHpRenderer
     private final int width;
     private final HpRenderer hpRenderer;
 
-    ProportionalHpRenderer(int width)
+    public ProportionalHpRenderer(int width)
     {
         this.hpRenderer = new HpRenderer();
         this.width = width;
