@@ -21,7 +21,6 @@ public class CommandListener
 
     public String showEquipment()
     {
-        // TODO przerób tak żeby faktycznie wyświetlało ekwipunek
         String actualGold = itemsRenderer.renderGold();
         String actualEquipment = itemsRenderer.renderItems();
         return actualGold + "\nTwoje przedmioty:\n" + actualEquipment;
