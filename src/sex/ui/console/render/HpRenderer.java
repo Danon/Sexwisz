@@ -5,6 +5,11 @@ public class HpRenderer
 {
     public String render(int actual, int max)
     {
+        if (actual < 0 || max < 0 || actual > max )
+        {
+            throw new IllegalArgumentException();
+        }
+
         String CurrentHP = "|";
         for (int x = 0; x < actual; x++)
         {
@@ -21,11 +26,6 @@ public class HpRenderer
             }
         }
 
-        if (actual < 0 || max < 0 || actual > max )
-        {
-            throw new IllegalArgumentException();
-        }
-
-        return CurrentHP + "|";
+       return CurrentHP + "|";
     }
 }
