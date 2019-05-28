@@ -47,6 +47,7 @@ public class Game implements GameListener
         {
             clearScreen();
             mapRenderer.render();
+            // TODO Tutaj Game.start() (czyli tutaj) ma wyświetlić mapę którą dostaniesz z `mapRenderer.render()`
             System.out.println("Zdrowie: " + proportionalHpRenderer.render(player.health(), player.maxHealth()));
             String command = scanner.nextLine();
             parser.parse(command);
