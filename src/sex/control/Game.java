@@ -46,7 +46,7 @@ public class Game implements GameListener
         while (gamePlaying)
         {
             clearScreen();
-            System.out.println(mapRenderer.render());
+            mapRenderer.render();
             System.out.println("Zdrowie: " + proportionalHpRenderer.render(player.health(), player.maxHealth()));
             String command = scanner.nextLine();
             parser.parse(command);

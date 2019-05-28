@@ -5,9 +5,6 @@ import sex.game.Player;
 
 public class MapRenderer
 {
-    private static final int VIEWPORT_WIDTH = 50;
-    private static final int VIEWPORT_HEIGHT = 15;
-
     private final Player player;
     private final Board map;
 
@@ -18,67 +15,9 @@ public class MapRenderer
 
     }
 
-    public String render()
+    public void render()
     {
-        String map = "";
-        /*
-        for (int row = 0; row < VIEWPORT_HEIGHT; row++)
-        {
-            for (int column = 0; column < VIEWPORT_WIDTH; column++)
-            {
-                map += renderBorders(row, column);
-            }
-            map += "\n";
-        }
-        */
         String mapa = " __________________________________________________________\n" + "/\t@PLAYER       ######\t\t\t\t\t\t\t\t$$$\\\n" + "|\t\t\t\t####\t\t \t\t\t  #################|\n" + "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|#################################################\t\t   |\n" + "|\t\t\t\t\t\t#$$\t\t\t##\t\t  ###          |\n" + "|\t############\t\t\t\t\t\t\t\t\t   ####|\n" + "|\t#$$$$  ###   \t################################\t   |\n" + "|\t#\t\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|\t#############################################\t#######|\n" + "|\t\t\t\t\t\t\t\t\t\t\t\t#\t#######|\n" + "|\t#####\t\t#############################\t#\t#######|\n" + "|\t $$$#\t\t#$\t\t\t\t\t\t\t#\t#\t#######|\n" + "|\t $$$#\t\t################ \t\t\t#\t#\t#######|\n" + "|\t#####\t\t#$\t\t\t\t\t\t\t#\t#\t#######|\n" + "|\t\t\t####################\t\t\t#\t#\t#######|\n" + "|\t####\t#\t\t\t\t\t\t\t\t#\t#\t#######|  \n" + "|\t#\t\t#\t\t\t\t\t\t\t\t#\t#\t\t   |\n" + "|\t#\t\t#\t\t\t\t\t\t\t\t#\t#\t\t   |\n" + "|\t#\t\t##############\t############\t\t\t\t   |\n" + "|\t#\t\t#\t\t$$$$##\t#\t\t\t\t\t###########|\n" + "|\t#####\t#\t\t$$$$##\t#\t\t\t\t\t\t\t   |\n" + "|\t#\t\t#\t##########\t###############################|\n" + "|$$$#\t\t#\t\t\t##\t\t\t\t\t\t\t\t   |\n" + "|#######\t#\t##########\t\t\t\t\t\t\t####   |\n" + "|\t\t\t#\t#\t#\t#######################\t\t#$$\t   |\n" + "|\t\t\t#\t#\t#\t\t##\t\t##\t\t##\t\t#######|\n" + "|\t\t\t#\t\t\t##\t\t##\t\t##\t\t##\t\t   |\n" + "|\t\t\t############################################   |\n" + "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|########\t###############################################|\n" + "|\t\t#\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|  $$$\t#\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|  $$$  #\t#################\t\t\t\t###############|\n" + "|\t\t#\t#$$$$       $$$$#\t\t\t\t#\t\t       |\n" + "|##\t# ###\t#####       #####\t\t\t\t#\t#$#$#$#$#$#|\n" + "|\t\t#\t#\t\t#####\t\t\t\t\t#   ###########|\n" + "| ####\t#\t#\t\t\t\t\t\t\t\t\t\t\t   |\n" + "| ####\t#\t###############################################|\n" + "|\t\t#\t#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       |\n" + "|#####\t#\t############################################## |\n" + "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |\n" + "|\t\t#############################################      |\n" + "|\t\t\t\t\t\t\t\t\t\t\t\t\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#$\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#  $#\t#\t#\t   |\n" + "|\t\t#\t#$\t#  $#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#$\t#$\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "|\t\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t#\t   |\n" + "| \t\t\t\t\t\t\t\t\t\t\t\t\t\t   |\t\n" + "|  ######################################################  |\n" + "|   #\t\t\t\t\t\t\t\t\t\t\t\t   #   |\n" + "|    #                                                #    |\n" + "|     ################################################     |\n" + "|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|\n" + " \\_________________________________________________________/";
         System.out.println(mapa);
-
-       // map += String.format("Pozycja: (%d, %d)", player.getX(), player.getY());
-        return map;
-    }
-
-    private char renderBorders(int row, int column)
-    {
-        /*if (row == 0)
-        {
-            if (column == 0)
-            {
-                return '┌';
-            }
-            if (column < VIEWPORT_WIDTH - 1)
-            {
-                return '-';
-            }
-            return '┐';
-        }
-
-        if (row < VIEWPORT_HEIGHT - 1)
-        {
-            if (column == 0 || column == VIEWPORT_WIDTH - 1)
-            {
-                return '│';
-            }
-        }
-
-        if (row == VIEWPORT_HEIGHT - 1)
-        {
-            if (column == 0)
-            {
-                return '└';
-            }
-            if (column < VIEWPORT_WIDTH - 1)
-            {
-                return '-';
-            }
-            return '┘';
-        }
-
-        if (row == player.getY() && column == player.getX())
-        {
-            return '@';
-        }*/
-
-        return ' ';
     }
 }
